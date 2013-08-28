@@ -5,18 +5,16 @@ class SessionsController < ApplicationController
     user = User.find_by_provider_and_uid(auth["provider"],
                                          auth["uid"]) ||
       User.create_with_omniauth(auth)
+
     session[:user_id] = user.id
+#    session[:oauth_token] = auth["credentials"]["token"]
+#    session[:oauth_secret] = auth["credentials"]["secret"]
 
-    Twitter.configure do |config|
-      config.oauth_token = auth["credentials"]["token"]
-      config.oauth_token_secret = auth["credentials"]["secret"]
-    end
-
-    redirect_to '/contents/buttons', :notice => "認証しました!!"
+    redirect_to '/contents/index', :notice => "認証しました!!"
   end
 
   def destroy
-    session[:user_id] = ni;
+    session[:user_id] = nil;
     redirect_to '/', :notice => "認証を外しました"
   end
 end

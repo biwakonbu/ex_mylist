@@ -2,6 +2,7 @@ ExMylist::Application.routes.draw do
   get "top/index"
   get "contents/index"
 
+  match "/auth/:provider/callback" => "sessions#create"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -7,7 +7,14 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+  <nav>
+    <% if signed_in? %>
+      welcome <%= session[:name] %>!
+      <%= link_to "Sign out", "/signout" %>
+    <% else %>
+        <%= link_to "Sign in with Twitter", "/auth/twitter" %>
+    <% end  %>
+  </nav>
 <%= yield %>
 
 </body>
