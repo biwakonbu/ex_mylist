@@ -7,6 +7,7 @@ class SessionsController < ApplicationController
       User.create_with_omniauth(auth)
 
     session[:user_id] = user.id
+    session[:twitter_id] = user.uid
 #    session[:oauth_token] = auth["credentials"]["token"]
 #    session[:oauth_secret] = auth["credentials"]["secret"]
 
