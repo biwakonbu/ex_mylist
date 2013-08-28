@@ -1,3 +1,14 @@
-<p>
-  hello <%= @user.name %>.
-</p>
+<%= form_tag "/contents/get" do %>
+  <%= text_field_tag 'sm_id' %>
+  <%= submit_tag "submit" %>
+<% end %>
+
+<ul>
+  <% if @movie %>
+    <% @movie.each do |m| %>
+      <h4><%= m.title %></h4>
+      <a href="<%= @url + m.video_id %>"><img src="<%= m.thumbnail_url %>"></a>
+      <hr />
+    <% end  %>
+  <% end  %>
+</ul>

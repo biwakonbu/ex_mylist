@@ -4,6 +4,7 @@ ExMylist::Application.routes.draw do
 
   match "/auth/:provider/callback" => "sessions#create"
   match "/signout" => "sessions#destroy"
+  match "/contents/get" => "contents#get"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
