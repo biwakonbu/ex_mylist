@@ -3,7 +3,7 @@ class ContentsController < ApplicationController
   def index
     if session[:user_id]
       @user = User.find_by_uid(session[:twitter_id])
-      @movie = Movie.find(:all, :conditions => {:user => session[:user_id].to_i})
+      @movie = Movie.find(:all, :conditions => {:user => session[:user_id].to_s})
       @url = "http://www.nicovideo.jp/watch/"
     end
   end
