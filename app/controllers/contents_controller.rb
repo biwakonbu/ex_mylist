@@ -1,5 +1,4 @@
 class ContentsController < ApplicationController
-  before_filter :authenticate_user!
   def index
     if session[:user_id]
       @user = User.find_by_uid(session[:twitter_id])
