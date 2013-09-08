@@ -1,4 +1,6 @@
 class TopController < ApplicationController
+  skip_filter :signin_required
+
   def index
 
   end
