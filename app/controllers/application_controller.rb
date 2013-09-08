@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_filter :signin_required, :except => :signin
+  before_filter :signin_required
   protect_from_forgery
   helper_method :signed_in?
 
@@ -10,6 +10,6 @@ class ApplicationController < ActionController::Base
   end
 
   def signin_required
-    redirect_to :controller => "top", :action => "index"
+    redirect_to :controller => "top", :action => "index" unless signed_in?
   end
 end
