@@ -1,0 +1,10 @@
+= form_tag "/contents/get" do
+  = text_field_tag 'sm_id'
+  = submit_tag "submit"
+%ul
+  - if @movie
+    - @movie.each do |m|
+      %h4= m.title
+      %a{:href => @url + m.video_id}
+        %img{:src => m.thumbnail_url}/
+      %hr/
