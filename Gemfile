@@ -23,7 +23,7 @@ group :assets do
   gem 'coffee-rails', '3.2.2'
   gem 'twitter-bootstrap-rails'
   gem 'therubyracer', '0.12.0'
-  gem 'less-rails', '2.4.2'     
+  gem 'less-rails', '2.4.2'
   gem 'haml-rails', '0.4'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
