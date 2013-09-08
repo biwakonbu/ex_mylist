@@ -6,13 +6,13 @@ gem 'omniauth'
 gem 'twitter'
 gem 'omniauth-twitter'
 
-
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 group :development do
   gem 'sqlite3', '1.3.5'
   gem 'rspec-rails', '2.11.0'
+  gem 'erb2haml'
 end
 
 
@@ -21,7 +21,8 @@ end
 group :assets do
   gem 'sass-rails',   '3.2.5'
   gem 'coffee-rails', '3.2.2'
-
+  gem 'twitter-bootstrap-rails'
+  gem 'haml-rails'
   # See https://github.com/sstephenson/execjs#readme for more supported runtimes
   # gem 'therubyracer', :platforms => :ruby
 
